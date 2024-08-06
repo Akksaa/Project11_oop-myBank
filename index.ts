@@ -42,25 +42,7 @@ class BankAccount implements BankAcc{
         
     }
 }
-class User {
-    firstName:string;
-    lastName:string;
-    age:number;
-    private account: BankAccount;
 
-    constructor(
-        firstName:string,
-        lastName:string,
-        age:number,
-        account:BankAccount
-    ){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.account = account;
-    }
-
-}
 let balance = Math.round(Math.random()*3000)
 
 const service = async function(){
@@ -95,7 +77,6 @@ const service = async function(){
         ]);
         let amount;
         const userAcc = new BankAccount(balance)
-        const userInfo = new User(user.fname, user.lname, user.age, userAcc)
 
         if (user.choice == "\tWithdraw Cash") {
             const user = await inquirer.prompt({
@@ -132,10 +113,4 @@ const service = async function(){
     }
 }();
 
-
-            // {
-            //     name:"balance",
-            //     type:"number",
-            //     message:chalk.blueBright("Enter your account balance:")
-            // },
 
